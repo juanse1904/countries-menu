@@ -1,0 +1,10 @@
+@import './App.scss';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+background-color: $white-dm-lm;
+}
+.switch{
+    margin-right: 15px;
+}
