@@ -3,8 +3,20 @@
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 background-color: $white-dm-lm;
+padding: 20px 70px;
+box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 }
 .switch{
+    display:flex;
     margin-right: 15px;
+    align-items: center;
+}
+.switch>h2{
+    font-weight: 600; 
+}
+.switch>h3{
+    margin:10px;
+    font-weight: 300
 }

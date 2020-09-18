@@ -1,0 +1,35 @@
+@import './Vars.scss';
+.infobar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 70px;
+}
+.options>select{
+max-width: 180px;
+font-size: 1.2em;
+border: none;
+padding: 7px;
+border-radius: 4px;
+background-color: $white-dm-lm;
+box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
+}
+.sbar{
+background-color: $white-dm-lm;
+padding:5px;
+max-width: 350px;
+display: flex;
+border-radius: 4px;
+align-items: center;
+box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
+}
+.sbar>img{
+    transform: scale(0.5);
+    filter: invert(0.8);
+    margin:4px;
+
+}
+.sbar>input{
+    border: none;
+    font-size: 1.0em;
+}
