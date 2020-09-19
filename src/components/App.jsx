@@ -4,24 +4,23 @@ import Header from './Header';
 import Sbar from './Sbar';
 import Country from './Country';
 import Board from './Board';
+import useInitialState from '../hooks/useInitialState';
 
-const items = [];
+const API = 'https://restcountries.eu/rest/v2/all';
+const inferior = Math.floor(Math.random() * 90);
 const App = () => {
-  const [countries, setCountries] = useState([]);
-  useEffect(() => {
-    fetch('https://restcountries.eu/rest/v2/all')
-      .then((ans) => ans.json()) /* toma la info de la API y la ordena en un JSON */
-      .then((data) => setCountries(data));
-  }, []);
-
+  const initialState = useInitialState(API);
+  /*
+  for (let i = 0;i < 7;i++) {
+    items.push(initialState[i]);
+  } */
   return (
     <>
       <Header />
       <Sbar />
       <Board>
 
-        {countries.map((item) => <Country key={item.alpha2Code} {...item} />)}
-        ;
+        {initialState.slice(inferior, inferior + 8).map((item) => <Country key={item.alpha2Code} {...item} />)}
 
       </Board>
     </>
