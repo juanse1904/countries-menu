@@ -7,9 +7,18 @@ const Country = ({ name, population, region, capital, flag }) => (
     <img src={flag} alt='' />
     <div className='data'>
       <h2>{name}</h2>
-      <p>{population}</p>
-      <p>{region}</p>
-      <p>{capital}</p>
+      <p>
+        Population:
+        {population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+      </p>
+      <p>
+        Region:
+        {region}
+      </p>
+      <p>
+        Capital:
+        {capital}
+      </p>
     </div>
   </div>
 
