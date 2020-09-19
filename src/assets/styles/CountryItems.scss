@@ -1,0 +1,17 @@
+@import './Vars.scss';
+
+.infoc{
+width:290px;
+border-radius: 6px;
+background-color: $white-dm-lm;
+}
+.infoc>img{
+ width:290px;   
+}
+.data{
+  padding:20px;
+   
+}
+.data>p{
+   margin:10px; 
+}

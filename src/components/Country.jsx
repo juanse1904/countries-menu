@@ -1,31 +1,19 @@
 import React from 'react';
+import '../assets/styles/CountryItems.scss';
 
-fetch('https://restcountries.eu/rest/v2/alpha/col')
-.then(ans=>ans.json())  
-.then((data) => {
-    var datos={
-        bandera: data.flag,
-        capital:data.capital,
-        name:data.name,
-        population:data.population,
-        region:data.region,
+const Country = ({ name, population, region, capital, flag }) => (
 
-    }
-    
-})
-const country = () => (
-
-      <div className='infoc'>
-        <img src={datos.flag} alt='' />
-        <div className='data'>
-          <h2>{data.name}</h2>
-          <p>{data.population}</p>
-          <p>{data.region}</p>
-          <p>{data.capital}</p>
-        </div>
-      </div>;
+  <div className='infoc'>
+    <img src={flag} alt='' />
+    <div className='data'>
+      <h2>{name}</h2>
+      <p>{population}</p>
+      <p>{region}</p>
+      <p>{capital}</p>
+    </div>
+  </div>
 
 );
 
-export default country;
+export default Country;
 
