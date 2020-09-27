@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const items = [];
-const useInitialState = (API) => {
+const useInitialState = (prom) => {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    fetch(API)
-      .then((ans) => ans.json()) /* toma la info de la API y la ordena en un JSON */
-      .then((data) => setCountries(data));
+     /* toma la info de la API y la ordena en un JSON */
+      prom.then((data) => setCountries(data));
   }, []);
-  
   return countries;
 };
 export default useInitialState;
