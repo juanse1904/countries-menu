@@ -8,7 +8,11 @@ import dataApi from './hooks/Infoapi';
 
 const API = 'https://restcountries.eu/rest/v2/all';
 
-const initialState = dataApi(API);
+const initialState = {
+  generalapi: dataApi(API),
+  byregion: [],
+  byname: [],
+};
 
 const store = createStore(reducer, initialState); /* crea el store, entendiendo
 como base de datos global de la app */

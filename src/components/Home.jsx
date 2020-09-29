@@ -9,9 +9,7 @@ import useInitialState from '../hooks/useInitialState';
 const inferior = Math.floor(Math.random() * 140);
 
 const Home = ({ info }) => {
-  const store = useSelector((state) => state);
-  const countries = useInitialState(store);
-  console.log('holii', countries);
+  const countries = useInitialState(info);
   /*
   for (let i = 0;i < 7;i++) {
     items.push(initialState[i]);
@@ -31,7 +29,7 @@ const Home = ({ info }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    info: state,
+    info: state.generalapi,
   };
 
 };

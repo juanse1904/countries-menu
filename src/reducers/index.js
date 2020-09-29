@@ -1,6 +1,6 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'EXPAND_INFO':
+    case 'FILTER_':
       return {
         ...state,
         Expand: [...state,]
