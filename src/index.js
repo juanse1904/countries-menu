@@ -4,14 +4,12 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
 import App from './routes/App';
-import dataApi from './hooks/Infoapi';
-
-const API = 'https://restcountries.eu/rest/v2/all';
 
 const initialState = {
-  generalapi: dataApi(API),
-  byregion: [],
-  byname: [],
+  countryList: [],
+  countryListByName: [],
+  CountryFilteredByRegion: [],
+  filterByRegion: '',
 };
 
 const store = createStore(reducer, initialState); /* crea el store, entendiendo

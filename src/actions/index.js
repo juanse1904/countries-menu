@@ -1,4 +1,4 @@
 export const expandInfo = payload => ({
-    type: 'EXPAND_INFO',
+    type: 'FILTER_BY_REGION',
     payload,
 })
