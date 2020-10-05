@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/App.scss';
 import Sbar from './Sbar';
-import Country from './Country';
+import Country from './CountryItem';
 import Board from './Board';
 
-const inferior = Math.floor(Math.random() * 140);
+/* const inferior = Math.floor(Math.random() * 140); */
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,6 @@ const Home = () => {
 
     return state.countryList;
   });
-  console.log('que sale', filterByRegion);
   /* countrylist busca en el state cual array está vacio y cual no,
   y devuelve el que tenga contenidos para renderizar */
   // const [countryList, setCountryList] = useState([])
@@ -43,8 +42,8 @@ const Home = () => {
         y payload que es el argumento que va a usar la funcion */
         // setCountryList(data)
       })
-      .catch(() => {
-        console.log('hubo un error, que dolor que dolo que pena');
+      .catch((e) => {
+        console.log('hubo un error, que dolor que dolo que pena', e);
       });
   }, [dispatch]);
   return (
@@ -60,11 +59,5 @@ const Home = () => {
   );
 
 };
-const mapStateToProps = (state) => {
-  return {
-    info: state.generalapi,
-  };
 
-};
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;

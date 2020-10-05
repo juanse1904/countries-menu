@@ -9,7 +9,7 @@ const App = () => (
     <Layout>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/data' component={Expand} />
+        <Route exact path='/data/:alpha2Code' component={Expand} />
       </Switch>
     </Layout>
   </BrowserRouter>
