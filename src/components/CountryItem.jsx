@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/CountryItems.scss';
 
 const Country = ({ name, population, region, capital, flag, alpha2Code }) => (
-  <Link to={`/data/${alpha2Code}`}>
+  <Link to={`/data/${alpha2Code.toLowerCase()}`}>
     <div className='infoc' data-id={alpha2Code}>
       <img src={flag} alt='' id={alpha2Code} />
       <div className='data'>

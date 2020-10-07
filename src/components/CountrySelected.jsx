@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/styles/Expand.scss';
 
-const Country = (props) => {
-  const dispatch = useDispatch();
-  const { alpha2Code } = props.match.params;
+const CountrySelected = (props) => {
+  console.log('holiii',props);
   const Name = (alpha1) => {
     const limit = useSelector((state) => state.countryList.find((item) => item.alpha3Code === alpha1));
     return (limit.name);
   };
   const Alpha2 = (alpha1) => {
     const limit = useSelector((state) => state.countryList.find((item) => item.alpha3Code === alpha1));
-    return (limit.alpha2Code);
+    return (limit.alpha2Code.toLowerCase());
   };
 
-  const country = useSelector((state) => state.countryList.find((item) => item.alpha2Code === alpha2Code));
-  console.log('esta es la prop', alpha2Code, country);
+  console.log('entree');
   return (
     <div className='infoe'>
-      <img src={country.flag} alt='' />
+      <img src={flag} alt='' />
       <div className='data'>
         <h2>{country.name}</h2>
         <div className='col1'>
@@ -68,4 +66,4 @@ const Country = (props) => {
   );
 };
 
-export default Country;
+export default CountrySelected;
