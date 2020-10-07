@@ -45,7 +45,7 @@ const Home = () => {
       .catch((e) => {
         console.log('hubo un error, que dolor que dolo que pena', e);
       });
-  }, []);
+  }, [dispatch]);
   return (
 
     <>

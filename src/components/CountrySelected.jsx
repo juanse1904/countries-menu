@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/styles/Expand.scss';
 
 const CountrySelected = (props) => {
-  console.log('holiii',props);
+  const country1 = props.country;
   const Name = (alpha1) => {
     const limit = useSelector((state) => state.countryList.find((item) => item.alpha3Code === alpha1));
     return (limit.name);
@@ -14,51 +14,51 @@ const CountrySelected = (props) => {
     return (limit.alpha2Code.toLowerCase());
   };
 
-  console.log('entree');
+  console.log('entree', props);
   return (
     <div className='infoe'>
-      <img src={flag} alt='' />
+      <img src={country1.flag} alt='' />
       <div className='data'>
-        <h2>{country.name}</h2>
+        <h2>{country1.name}</h2>
         <div className='col1'>
 
           <p>
             <p>
               Native Name:
-              {country.nativeName}
+              {country1.nativeName}
             </p>
             Population:
-            {country.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+            {country1.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
           </p>
           <p>
             Region:
-            {country.region}
+            {country1.region}
           </p>
           <p>
             Sub Region:
-            {country.subregion}
+            {country1.subregion}
           </p>
           <p>
             Capital:
-            {country.capital}
+            {country1.capital}
           </p>
         </div>
         <div className='col2'>
           <p>
             Top Level Domain:
-            {country.topLevelDomain[0]}
+            {country1.topLevelDomain[0]}
           </p>
           <p>
             Currencies:
-            {country.currencies[0].code}
+            {country1.currencies[0].code}
           </p>
           <p>
             Languages:
-            {country.languages[0].nativeName}
+            {country1.languages[0].nativeName}
           </p>
         </div>
         <p>Border Countries</p>
-        {country.borders.map((items) => <Link to={`/data/${Alpha2(items)}`}><input type='button' value={Name(items)} /></Link>)}
+        {country1.borders.map((items) => <Link to={`/data/${Alpha2(items)}`}><input type='button' value={Name(items)} /></Link>)}
       </div>
 
     </div>
