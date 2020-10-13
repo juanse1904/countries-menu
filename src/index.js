@@ -13,6 +13,7 @@ const initialState = {
   countryListByName: [],
   CountryFilteredByRegion: [],
   filterByRegion: '',
+  CountrySelected: {},
 };
 const persistConfig = {
   key: 'SET_COUNTRY_LIST',

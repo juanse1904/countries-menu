@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/styles/Expand.scss';
 
-const CountrySelected = (props) => {
-  const country1 = props.country;
+const CountrySelected = ({ alpha2Code }) => {
+  console.log('codigo pais', alpha2Code.toUpperCase());
+  const country1 = useSelector((state) => state.countryList.find((item) => item.alpha2Code === alpha2Code.toUpperCase()));
   const Name = (alpha1) => {
     const limit = useSelector((state) => state.countryList.find((item) => item.alpha3Code === alpha1));
     return (limit.name);
@@ -13,8 +14,7 @@ const CountrySelected = (props) => {
     const limit = useSelector((state) => state.countryList.find((item) => item.alpha3Code === alpha1));
     return (limit.alpha2Code.toLowerCase());
   };
-
-  console.log('entree', props);
+  console.log('the country selected is:', country1);
   return (
     <div className='infoe'>
       <img src={country1.flag} alt='' />

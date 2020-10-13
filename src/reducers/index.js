@@ -1,5 +1,3 @@
-import { persisReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -22,6 +20,14 @@ const reducer = (state, action) => {
         countryList: action.payload, /*se toma el estado (objeto que se enucentra
               en el index principal) y se desestructura (state...) y se toma la
               llave counytryList y se ñe asigna action.payload(argumento que trajo dispatch)  */
+      };
+    case 'SET_COUNTRY_SELECTED':
+      console.log('country selected', action.payload);
+      return {
+        ...state,
+        CountrySelected: action.payload, /*se toma el estado (objeto que se enucentra
+                en el index principal) y se desestructura (state...) y se toma la
+                llave counytryList y se ñe asigna action.payload(argumento que trajo dispatch)  */
       };
     default:
       return state;
