@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/Expand.scss';
-import fetchcountries from './Home';
 import CountrySelected from './CountrySelected';
 
 const countryPage = (props) => {
@@ -9,6 +8,7 @@ const countryPage = (props) => {
   const allCountries = useSelector((state) => state.countryList);
   console.log(props.match.params.alpha2Code);
   console.log(useSelector((state) => state));
+
   const fetchcountries = async () => {
 
     const response = await fetch('https://restcountries.eu/rest/v2/all');
@@ -40,11 +40,11 @@ const countryPage = (props) => {
   /*   function handleClick() {
     props.history.goBack();
   } */
-  console.log('que pasa');
+  
   /*  fetchCountry(); */
   return (
     <div className='countrypage'>
-      <CountrySelected alpha2Code={props.match.params.alpha2Code} />
+ <CountrySelected alpha2Code={props.match.params.alpha2Code} /> 
     </div>
 
   );
