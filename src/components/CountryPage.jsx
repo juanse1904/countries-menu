@@ -6,9 +6,6 @@ import CountrySelected from './CountrySelected';
 const countryPage = (props) => {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countryList);
-  console.log(props.match.params.alpha2Code);
-  console.log(useSelector((state) => state));
-
   const fetchcountries = async () => {
 
     const response = await fetch('https://restcountries.eu/rest/v2/all');
