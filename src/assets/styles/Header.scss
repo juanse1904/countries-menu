@@ -4,9 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding:0 auto;
-background-color: $white-dm-lm;
+        background-color: $white-dm-lm;
 padding: 20px 70px;
 box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 }
@@ -18,6 +16,9 @@ box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 .switch>h3{
     margin:10px;
     font-weight: 300
+}
+.logoImage{
+height: 60px;
 }
 @media (max-width:500px){
     .header{
