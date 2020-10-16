@@ -17,7 +17,7 @@ box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 .sbar{
 background-color: $white-dm-lm;
 padding:5px;
-max-width: 350px;
+max-width: 470px;
 display: flex;
 border-radius: 4px;
 align-items: center;
@@ -32,4 +32,11 @@ box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 .sbar>input{
     border: none;
     font-size: 1.0em;
+    
+}
+
+@media  (max-width:600px){
+    .infobar{
+    flex-direction: column;
+    }
 }

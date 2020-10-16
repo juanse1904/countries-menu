@@ -46,7 +46,7 @@ const Home = () => {
   return (
 
     <>
-      <Sbar />
+
       <Board>
 
         {countryList.map((item) => <Country key={item.alpha2Code} {...item} />) }

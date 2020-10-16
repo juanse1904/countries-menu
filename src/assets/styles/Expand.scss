@@ -37,5 +37,21 @@ font-size: 2.2em;
 }
 .countrypage{
     display: flex;
-    align-items: center;
+    justify-content: center;
+}
+.returnButton{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 15px;
+    width: 90px;
+    background-color: white;
+    padding: 7px;
+    box-shadow: 0px 0px 2px -1px rgba(0,0,0,0.75);
+    margin-left: 70px;
+    margin-top: 50px;
+}
+.returnButton>img{
+    width:15px;
+    margin-right: 5px;
 }

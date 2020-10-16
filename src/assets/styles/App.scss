@@ -7,3 +7,8 @@ body{
     background-color: $very-light-gray-lm;
     font-family: $font1;
 }
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

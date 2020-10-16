@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/Expand.scss';
 import CountrySelected from './CountrySelected';
+import arrow from '../assets/static/arrow-icon.png';
 
 const countryPage = (props) => {
   const dispatch = useDispatch();
@@ -20,9 +21,10 @@ const countryPage = (props) => {
     // setCountryList(data)
 
   };
-  if (!allCountries) {
-    fetchcountries();
-  };
+
+  // const goBack = () => {
+  // props.history.goBack();
+  //};
   /*const fetchCountry = async () => {
 
     const response = await fetch(`https://restcountries.eu/rest/v2/alpha/${props.match.params.alpha2Code}`);
@@ -37,13 +39,21 @@ const countryPage = (props) => {
   /*   function handleClick() {
     props.history.goBack();
   } */
-  
-  /*  fetchCountry(); */
-  return (
-    <div className='countrypage'>
- <CountrySelected alpha2Code={props.match.params.alpha2Code} /> 
-    </div>
 
+  /*  fetchCountry(); */
+  function returnPage() {
+    props.history.goBack();
+  }
+  return (
+    <>
+      <div className='returnButton'>
+        <img src={arrow} alt='' onClick={returnPage} />
+        <p>Back</p>
+      </div>
+      <div className='countrypage'>
+        <CountrySelected alpha2Code={props.match.params.alpha2Code} />
+      </div>
+    </>
   );
 };
 

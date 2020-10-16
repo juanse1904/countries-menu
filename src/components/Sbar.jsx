@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
 import search from '../assets/static/search.png';
 import '../assets/styles/Sbar.scss';
 
@@ -10,33 +10,44 @@ const filterByRegionSelected = (regionselected) => {
     payload: { regionselected },
   };
 };
-const Sbar = () => {
-  const dispatch = useDispatch();
- /*  const [dropdown, setdropdown] = useState(false);
+const Sbar = (props) => {
+
+  /*  const [dropdown, setdropdown] = useState(false);
   const filterByRegion = useSelector((state) => state.filterByRegion); */
 
   const onRegionChange = (selectEvent) => {
-    console.log('filtrando por region', selectEvent);
+
     dispatch(filterByRegionSelected(selectEvent));
   };
-
+  function countryByName(e) {
+    props.countryforName(e.target.value);
+  }
   return (
     <div className='infobar'>
       <div className='sbar'>
         <img src={search} alt='' />
-        <input type='text' placeholder='Search for a Country...' />
+        <input type='text' placeholder='Search for a Country...' onChange={countryByName} />
       </div>
       <div className='options'>
-        <ul name='lista desplegable' placeholder='Filter By Region'>
-          <li value='' onClick={() => onRegionChange('Africa')}>Africa</li>
-          <li value='' onClick={() => onRegionChange('Americas')}>America</li>
-          <li value='' onClick={() => onRegionChange('Asia')}>Asia</li>
-          <li value='' onClick={() => onRegionChange('Europe')}>Europe</li>
-          <li value='' onClick={() => onRegionChange('Oceania')}>Oceania</li>
-        </ul>
+        <select name='lista desplegable' placeholder='Filter By Region'>
+          <option value='' onClick={() => onRegionChange('Africa')}>Africa</option>
+          <option value='' onClick={() => onRegionChange('Americas')}>America</option>
+          <option value='' onClick={() => onRegionChange('Asia')}>Asia</option>
+          <option value='' onClick={() => onRegionChange('Europe')}>Europe</option>
+          <option value='' onClick={() => onRegionChange('Oceania')}>Oceania</option>
+        </select>
       </div>
     </div>
   );
 };
-export default Sbar;
+
+const countryforName = (payload) => ({
+  type: 'SET_COUNTRY_BYNAME',
+  payload,
+});
+const mapDispatchToProps = {
+  countryforName,
+
+};
+export default connect(null, mapDispatchToProps)(Sbar);
 

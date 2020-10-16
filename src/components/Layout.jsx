@@ -1,14 +1,17 @@
 import React from 'react';
 
 import Header from './Header';
+import Sbar from './Sbar';
 
 const Layout = ({ children }) => (
-  <div className='app'>
+  <>
     <Header />
-    { children }
+    <Sbar />
+    <div className='app'>
+      { children }
 
-  </div>
-
+    </div>
+  </>
 );
 
 export default Layout;
