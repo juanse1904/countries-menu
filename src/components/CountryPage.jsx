@@ -46,9 +46,11 @@ const countryPage = (props) => {
   }
   return (
     <>
-      <div className='returnButton'>
-        <img src={arrow} alt='' onClick={returnPage} />
-        <p>Back</p>
+      <div className='backButton'>
+        <div className='returnButton'>
+          <img src={arrow} alt='' onClick={returnPage} />
+          <p>Back</p>
+        </div>
       </div>
       <div className='countrypage'>
         <CountrySelected alpha2Code={props.match.params.alpha2Code} />

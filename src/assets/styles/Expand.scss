@@ -7,25 +7,46 @@
 display:flex;
 flex-direction: column;
 justify-content: center;
+margin-bottom: 10px;;
 }
 .basicInfo{
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+}
+.col1{
+    margin-right: 10px;
 }
 .col1>p{
 margin-bottom: 15px;
 font-size: 0.9em;
+justify-self: flex-start;
+}
+.col2{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 }
 .col2>p{
     margin-bottom: 15px;
     font-size: 0.9em;
+    margin-right: 0;
+    justify-self: flex-end;
     }
-.infoe>img{
+.flag{
+ display:flex;
+ align-items: center;
+ justify-content: center;            
+}
+.flag>img{
+    display: flex;
     width:80%;
+    align-self: center;
+    margin-bottom: 30px;
 }
 .dataSelected>h2{
 margin-bottom: 30px;
 font-size: 2.2em;
+align-items: center;
 
 }
 .borderButton{
@@ -38,6 +59,9 @@ font-size: 2.2em;
 .countrypage{
     display: flex;
     justify-content: center;
+}
+.backButton{
+    margin-left: -90%;
 }
 .returnButton{
     display:flex;
@@ -54,4 +78,18 @@ font-size: 2.2em;
 .returnButton>img{
     width:15px;
     margin-right: 5px;
+    
+}
+.app{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+@media (max-width:1084px){
+    .infoe{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        margin: 10px 70px;
+    }
 }

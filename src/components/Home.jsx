@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/App.scss';
-import Sbar from './Sbar';
 import Country from './CountryItem';
 import Board from './Board';
 
@@ -41,7 +40,9 @@ const Home = () => {
     // setCountryList(data)
 
   };
-  fetchcountries();
+  useEffect(() => {
+    fetchcountries();
+  }, [countryList]);
 
   return (
 
