@@ -28,15 +28,15 @@ const Sbar = (props) => {
         <img src={search} alt='' />
         <input type='text' placeholder='Search for a Country...' onChange={countryByName} />
       </div>
-      <div className='options'>
-        <select name='lista desplegable' placeholder='Filter By Region'>
-          <option value='' onClick={() => onRegionChange('Africa')}>Africa</option>
-          <option value='' onClick={() => onRegionChange('Americas')}>America</option>
-          <option value='' onClick={() => onRegionChange('Asia')}>Asia</option>
-          <option value='' onClick={() => onRegionChange('Europe')}>Europe</option>
-          <option value='' onClick={() => onRegionChange('Oceania')}>Oceania</option>
-        </select>
-      </div>
+
+      <select name='lista desplegable' placeholder='Filter By Region' className='options'>
+        <option value='' onClick={() => onRegionChange('Africa')}>Africa</option>
+        <option value='' onClick={() => onRegionChange('Americas')}>America</option>
+        <option value='' onClick={() => onRegionChange('Asia')}>Asia</option>
+        <option value='' onClick={() => onRegionChange('Europe')}>Europe</option>
+        <option value='' onClick={() => onRegionChange('Oceania')}>Oceania</option>
+      </select>
+
     </div>
   );
 };

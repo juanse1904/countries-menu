@@ -31,12 +31,27 @@ box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 }
 .sbar>input{
     border: none;
+   }
+.sbar>input:focus{
+ outline: none;
+}
+.options{
+    border: none;
     font-size: 1.0em;
-    
+    max-width: 350px;
+    box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
+    background-color: $white-dm-lm;
+    height: 40px;
+    padding:0 15px;
 }
 
 @media  (max-width:600px){
     .infobar{
     flex-direction: column;
+    align-items: center;
+    }
+    .options{
+        margin-top: 15px;
+        width:100%;
     }
 }
