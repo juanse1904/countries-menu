@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-        background-color: $white-dm-lm;
+    padding:0 auto;
+background-color: $white-dm-lm;
 padding: 20px 70px;
 box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
 }
@@ -18,7 +19,7 @@ box-shadow: 2px 3px 6px -1px rgba(153,148,153,1);
     font-weight: 300
 }
 .logoImage{
-height: 60px;
+    height: 70px;
 }
 @media (max-width:500px){
     .header{
