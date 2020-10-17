@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 import search from '../assets/static/search.png';
 import '../assets/styles/Sbar.scss';
 
@@ -10,6 +11,7 @@ const filterByRegionSelected = (regionselected) => {
     payload: { regionselected },
   };
 };
+
 const Sbar = (props) => {
 
   /*  const [dropdown, setdropdown] = useState(false);

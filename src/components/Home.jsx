@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/App.scss';
 import Country from './CountryItem';
 import Board from './Board';
+import Sbar from './Sbar';
 
 /* const inferior = Math.floor(Math.random() * 140); */
 
@@ -48,8 +49,8 @@ const Home = () => {
 
     <>
 
+      <Sbar />
       <Board>
-
         {countryList.map((item) => <Country key={item.alpha2Code} {...item} />) }
 
       </Board>
