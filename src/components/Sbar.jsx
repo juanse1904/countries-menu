@@ -1,6 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import classNames from 'classnames';
+import React, { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import search from '../assets/static/search.png';
 import '../assets/styles/Sbar.scss';
 
@@ -13,14 +12,15 @@ const filterByRegionSelected = (regionselected) => {
 };
 
 const Sbar = (props) => {
-
+  const [dropdown, setdropdown] = useState(false);
   /*  const [dropdown, setdropdown] = useState(false);
   const filterByRegion = useSelector((state) => state.filterByRegion); */
-
+  const dispatch = useDispatch();
   const onRegionChange = (selectEvent) => {
 
     dispatch(filterByRegionSelected(selectEvent));
   };
+
   function countryByName(e) {
     props.countryforName(e.target.value);
   }
@@ -31,13 +31,17 @@ const Sbar = (props) => {
         <input type='text' placeholder='Search for a Country...' onChange={countryByName} />
       </div>
 
-      <select name='lista desplegable' placeholder='Filter By Region' className='options'>
-        <option value='' onClick={() => onRegionChange('Africa')}>Africa</option>
-        <option value='' onClick={() => onRegionChange('Americas')}>America</option>
-        <option value='' onClick={() => onRegionChange('Asia')}>Asia</option>
-        <option value='' onClick={() => onRegionChange('Europe')}>Europe</option>
-        <option value='' onClick={() => onRegionChange('Oceania')}>Oceania</option>
-      </select>
+      <div className={`${dropdown ? 'dropdown open' : 'dropdown'}`} onClick={() => setdropdown(!dropdown)} id='filter'>
+        Filter by Region
+        <i className='fas fa-chevron-down' />
+        <ul>
+          <li onClick={() => onRegionChange('Africa')}>Africa</li>
+          <li onClick={() => onRegionChange('Americas')}>Americas</li>
+          <li onClick={() => onRegionChange('Asia')}>Asia</li>
+          <li onClick={() => onRegionChange('Europe')}>Europe</li>
+          <li onClick={() => onRegionChange('Oceania')}>Oceania</li>
+        </ul>
+      </div>
 
     </div>
   );

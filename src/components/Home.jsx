@@ -41,10 +41,7 @@ const Home = () => {
     // setCountryList(data)
 
   };
-  useEffect(() => {
-    fetchcountries();
-  }, [countryList]);
-
+  fetchcountries();
   return (
 
     <>
