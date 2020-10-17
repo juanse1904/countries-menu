@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/styles/Expand.scss';
-import arrow from '../assets/static/arrow-icon.png';
 
 const CountrySelected = ({ alpha2Code, countryList }) => {
 
@@ -26,7 +25,9 @@ const CountrySelected = ({ alpha2Code, countryList }) => {
   return (
 
     <div className='infoe'>
-      <img src={country1.flag} alt='' />
+      <div className='flag'>
+        <img src={country1.flag} alt='' />
+      </div>
       <div className='dataSelected'>
         <h2>{country1.name}</h2>
         <div className='basicInfo'>

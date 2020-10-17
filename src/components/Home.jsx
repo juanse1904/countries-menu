@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import '../assets/styles/App.scss';
-import Sbar from './Sbar';
 import Country from './CountryItem';
 import Board from './Board';
+import Sbar from './Sbar';
 
 /* const inferior = Math.floor(Math.random() * 140); */
 
@@ -41,14 +41,16 @@ const Home = () => {
     // setCountryList(data)
 
   };
-  fetchcountries();
+  useEffect(() => {
+    fetchcountries();
+  }, [countryList]);
 
   return (
 
     <>
 
+      <Sbar />
       <Board>
-
         {countryList.map((item) => <Country key={item.alpha2Code} {...item} />) }
 
       </Board>
