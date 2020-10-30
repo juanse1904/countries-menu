@@ -13,7 +13,6 @@ const App = () => (
       </Switch>
     </Layout>
   </BrowserRouter>
-
 );
 
 export default App;
