@@ -51,4 +51,3 @@ ReactDOM.render(
 );
 store.subscribe(() => saveToLocalStorage(store.getState()));
 //lo que esta realziando es buscar el archivo Helloworld.jsx y renderizarlo en la etiqueta de html con id 'app'//
-
