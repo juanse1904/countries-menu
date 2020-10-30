@@ -27,8 +27,7 @@ const Home = () => {
   /* countrylist busca en el state cual array está vacio y cual no,
   y devuelve el que tenga contenidos para renderizar */
   // const [countryList, setCountryList] = useState([])
-  const fetchcountries = async () => {
-
+  const fetchCountries = async () => {
     const response = await fetch('https://restcountries.eu/rest/v2/all');
     const data = await response.json();
     dispatch({
@@ -41,7 +40,9 @@ const Home = () => {
     // setCountryList(data)
 
   };
-  fetchcountries();
+  useEffect(() => {
+    fetchCountries();
+  }, []);
   return (
 
     <>
